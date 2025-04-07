@@ -27,3 +27,48 @@ except ValueError:
 except KeyboardInterrupt:
     print("\nPrograma encerrado.");
     # O try e except são utilizados para tratar erros de entrada de dados, como valores inválidos ou tipos de dados incorretos.
+
+# 2 - CLASSIFICAÇÃO DE SUSTENTABILIDADE
+nivelDeConsumoDeAgua = "";
+nivelDeConsumoDeEnergia = "";
+nivelDeGeracaoDeResiduosNaoReciclaveis = "";
+nivelDeUsoDeTransporte = "";
+
+# Menor que 150 litros de água é considerado alto, entre 150 e 200 litros é moderado e acima de 200 litros é considerado baixo.
+if litrosDeAgua < 150:
+    nivelDeConsumoDeAgua = "Alta Sustentabilidade";
+elif litrosDeAgua <= 200:
+    nivelDeConsumoDeAgua = "Moderada Sustentabilidade";
+else:
+    nivelDeConsumoDeAgua = "Baixa Sustentabilidade";
+
+# O mesmo vale para o consumo de energia, onde menor que 5 kWh é considerado alto, entre 5 e 10 kWh é moderado e acima de 10 kWh é baixo.
+if kwhDeEnergia < 5:
+    nivelDeConsumoDeEnergia = "Alta Sustentabilidade";
+elif kwhDeEnergia <= 10:
+    nivelDeConsumoDeEnergia = "Moderada Sustentabilidade";
+else:
+    nivelDeConsumoDeEnergia = "Baixa Sustentabilidade";
+
+# A geração de resíduos não recicláveis é considerada alta quando o percentual de resíduos reciclados é maior que 50%, moderada quando está entre 20% e 50% e baixa quando é menor que 20%.
+if percentualDeResiduosReciclados > 50:
+    nivelDeGeracaoDeResiduosNaoReciclaveis = "Alta Sustentabilidade";
+elif percentualDeResiduosReciclados >= 20:
+    nivelDeGeracaoDeResiduosNaoReciclaveis = "Moderada Sustentabilidade";
+else:
+    nivelDeGeracaoDeResiduosNaoReciclaveis = "Baixa Sustentabilidade";
+
+# O meio de transporte é considerado sustentável quando é um transporte público, bicicleta ou caminhada, moderado quando é um carro elétrico ou carona compartilhada e baixo quando é um carro a combustão.
+if meioDeTransporte in [1, 2, 3, 5]:
+    nivelDeUsoDeTransporte = "Alta Sustentabilidade";
+elif meioDeTransporte == 4:
+    nivelDeUsoDeTransporte = "Baixa Sustentabilidade";
+else:
+    nivelDeUsoDeTransporte = "Moderada Sustentabilidade";
+
+# 3 - SAÍDA DE DADOS
+print("\nSUSTENTABILIDADE");
+print(f'Consumo de água: {nivelDeConsumoDeAgua}');
+print(f'Consumo de energia: {nivelDeConsumoDeEnergia}');
+print(f'Geração de Resídusos Não Recicláveis: {nivelDeGeracaoDeResiduosNaoReciclaveis}');
+print(f'Uso de Transporte: {nivelDeUsoDeTransporte}');
